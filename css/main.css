@@ -1,0 +1,20 @@
+/* FORM */
+input.name {
+    display: inline;
+    width: 19%;
+}
+
+select.form-control {
+    display: inline;
+    width: 25%;
+}
+
+.btn-custom {
+    background-color: lightseagreen !important;
+    color: white;
+}
+
+/* SAVED NAMES LIST */
+#saved-names-list ul {
+    list-style-type: none;
+}

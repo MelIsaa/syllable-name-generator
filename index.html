@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Melissa Isaacson">
+    <meta name="description" content="A name generator.">
+    <meta name="keywords" content="name, names, generator, generate names, create names, fantasy names">
+    <title>Syllable Name Generator</title>
+    <!-- STYLESHEETS -->
+    <link href="./css/normalize.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row bg-info text-white">
+            <div class="col">
+                <header>
+                    <h1 class="text-center">Syllable Name Generator</h1>
+                </header>
+            </div>
+        </div>
+    </div>
+    <main class="container">
+        <article>
+            <section id="name-generator" class="row justify-content-md-center">
+                <div class="col">
+                    <p>This name generator mixes the syllables of given names to make new names with familiar sounds.</p>
+                    <form id="name-gen-form">
+                        <fieldset>
+                            <p class="alert alert-warning">Use dashes ( - ) to seperate the syllables of each name.<br>
+                                <span class="example font-weight-light">Mel-is-sa, Ka-tie, Bon-nie, E-la-na</span>
+                            </p>
+                            <p>
+                                <input type="checkbox" name="getOnClick" value="prepopulateFieldOnClick" checked>
+                                <label>Get random name on click.</label>
+                            </p>
+                        </fieldset>
+                        <section id="name-inputs">
+                            <p>
+                                <input class="name form-control" type="text" name="name1">
+                                <input class="name form-control" type="text" name="name2">
+                                <input class="name form-control" type="text" name="name3">
+                                <input class="name form-control" type="text" name="name4">
+                                <input class="name form-control" type="text" name="name5">
+                            </p>
+                            <p>
+                                <input class="name form-control" type="text" name="name6">
+                                <input class="name form-control" type="text" name="name7">
+                                <input class="name form-control" type="text" name="name8">
+                                <input class="name form-control" type="text" name="name9">
+                                <input class="name form-control" type="text" name="name10">
+                            </p>
+                        </section>
+                        <section id="name-form-controls">
+                            <p><span class="another-name">+ Add Another Name Field</span></p>
+                            <p class="text-right">
+                                <select name="prepopNames" id="pre-populate-names" class="form-control">
+                                    <option value="femaleNames2016">Popular Female Names</option>
+                                    <option value="maleNames2016">Popular Male Names</option>
+                                </select>
+                                <button id="pre-pop-random-names" class="btn btn-secondary">Pre-Populate With Random Names!</button>
+                            </p>
+                            <p class="text-right">
+                                <select name="name-gen-select" id="generate-select" class="form-control">
+                                    <option value="1">One Name</option>
+                                    <option value="25" selected>Twenty-five Names</option>
+                                    <option value="50">Fifty Names</option>
+                                    <option value="100">A Hundred Names</option>
+                                </select>
+                                <select name="name-gen-length" id="generate-length" class="form-control">
+                                    <option value="1">Short Names</option>
+                                    <option value="2" selected>Medium Names</option>
+                                    <option value="3">Long Names</option>
+                                </select>
+                                <button id="gen-names" class="btn btn-custom" data-input-class="name">Generate Names!</button>
+                                <button id="clear-names" class="btn btn-warning">Clear Names!</button>
+                            </p>
+                        </section>
+                    </form>
+                </div>
+            </section>
+            <section id="generated-names" class="row justify-content-md-center">
+                <div id="generated-names-list" class="col">
+                </div>
+            </section>
+            <section id="saved-names" class="row justify-content-md-center">
+                <div id="saved-names-list" class="col">
+                    <h2 class="center-text">Saved Names</h2>
+                    <ul>
+                    </ul>
+                    <p class="center-text">
+                        <button id="saved-download" class="btn btn-success" disabled>Download</button>
+                        <button id="saved-clear" class="btn btn-warning">Clear</button>
+                    </p>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col">
+                &copy; Melissa Isaacson 2021
+            </div>
+        </div>
+    </footer>
+    <!-- JAVASCRIPT FILES -->
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/name-gen.js"></script>
+</body>
+</html>
