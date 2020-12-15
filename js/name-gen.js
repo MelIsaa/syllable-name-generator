@@ -231,3 +231,33 @@ function processData(data) {
 	let lines = noCommas.split(/\r\n|\n|,/);
 	return lines;
 }
+
+// Save saved name list to a txt file and send for download
+// via: https://ourcodeworld.com/articles/read/189/how-to-create-a-file-and-generate-a-download-with-javascript-in-the-browser-without-a-server
+function download(filename, text) {
+  let dlButton = $('#saved-download');
+  dlButton.attr({
+      'href': 'data:text/plain;charset=utf-8,' + encodeURIComponent(text),
+      'download': filename
+      
+  });
+}
+
+function downloadNames() {
+    let savedNames = [];
+    let strNames = '';
+    
+    $('#saved-names-list ul li').each((i, el)=>{
+        savedNames.push($(el).data("saved-name"));
+    });
+    
+    savedNames.forEach(e => {
+        strNames += e + '\n';
+    });
+    
+    var blob = new Blob([strNames], {type: "text/plain;charset=utf-8"});
+    
+    saveAs(blob, "generatedNames.txt");
+}
+
+$('#saved-download').on('click', downloadNames);
